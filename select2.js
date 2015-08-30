@@ -1,7 +1,7 @@
 /*
 Copyright 2012 Igor Vaynberg
 
-Version: @@ver@@ Timestamp: @@timestamp@@
+Version: 3.5.4 Timestamp: Sun Aug 30 13:30:32 EDT 2015
 
 This software is licensed under the Apache License, Version 2.0 (the "Apache License") or the GNU
 General Public License version 2 (the "GPL License"). You may choose either license to govern your
@@ -3237,10 +3237,11 @@ the specific language governing permissions and limitations under the Apache Lic
 
         createChoice: function (data) {
             var enableChoice = !data.locked,
+            choiceLabel = data.choiceLabel ? data.choiceLabel : '',
                 enabledItem = $(
                     "<li class='select2-search-choice'>" +
+                    "    <a href='#' class='select2-search-choice-close' aria-label='" + choiceLabel + "'></a>" +
                     "    <div></div>" +
-                    "    <a href='#' class='select2-search-choice-close' tabindex='-1'></a>" +
                     "</li>"),
                 disabledItem = $(
                     "<li class='select2-search-choice select2-locked'>" +
