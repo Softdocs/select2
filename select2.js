@@ -3237,7 +3237,7 @@ the specific language governing permissions and limitations under the Apache Lic
 
         createChoice: function (data) {
             var enableChoice = !data.locked,
-            var choiceLabel = data.choiceLabel ? data.choiceLabel : '';
+            choiceLabel = data.choiceLabel ? data.choiceLabel : '';
                 enabledItem = $(
                     "<li class='select2-search-choice'>" +
                     "    <div></div>" +
