@@ -2608,7 +2608,7 @@ the specific language governing permissions and limitations under the Apache Lic
             this.showSearchInput = showSearchInput;
             var tabindex = !showSearchInput ? '0' : '-1';
             console.log(tabindex);
-            console.log(this.dropdown.find(".select2-search"));
+            console.log($('input.select2-offscreen'));
             this.dropdown.find(".select2-search").toggleClass("select2-search-hidden", !showSearchInput);
             this.dropdown.find(".select2-search").prop("tabindex", tabindex);
             this.dropdown.find(".select2-search").toggleClass("select2-offscreen", !showSearchInput);
