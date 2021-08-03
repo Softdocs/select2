@@ -2143,7 +2143,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 "   <span class='select2-arrow' role='presentation'><b role='presentation'></b></span>",
                 "</a>",
                 "<label for='' class='select2-offscreen'></label>",
-                "<input class='select2-focusser select2-offscreen' type='text' aria-haspopup='true' role='button' />",
+                "<input tabindex='-1' class='select2-focusser select2-offscreen' type='text' aria-haspopup='true' role='button' />",
                 "<div class='select2-drop select2-display-none'>",
                 "   <div class='select2-search'>",
                 "       <label for='' class='select2-offscreen'></label>",
@@ -2606,8 +2606,10 @@ the specific language governing permissions and limitations under the Apache Lic
             if (this.showSearchInput === showSearchInput) return;
 
             this.showSearchInput = showSearchInput;
+            var tabindex = !showSearchInput ? -1 : 0 
 
             this.dropdown.find(".select2-search").toggleClass("select2-search-hidden", !showSearchInput);
+            this.dropdown.find(".select2-offscreen").attr("tabindex", tabindex);
             this.dropdown.find(".select2-search").toggleClass("select2-offscreen", !showSearchInput);
             //add "select2-with-searchbox" to the container if search box is shown
             $(this.dropdown, this.container).toggleClass("select2-with-searchbox", showSearchInput);
